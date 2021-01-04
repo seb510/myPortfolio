@@ -1,9 +1,15 @@
-// Скрипт для плавного перехода для якорных ссылок по сайту
 $(document).ready(function(){
-    $("#navigation").on("click","a", function (event) {
-        event.preventDefault();
-        var id  = $(this).attr('href'),
-            top = $(id).offset().top;
-        $('body,html').animate({scrollTop: top}, 1000);
+// Скрипт для плавного перехода для якорных ссылок по сайту
+var $page = $('html, body');
+$('a[href*="#"]').click(function() {
+    $page.animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 800);
+    return false;
+});
+
+//Burger menu
+    $('.menu-btn').click(function(){
+        $('.menu__list').slideToggle('500');
     });
 });

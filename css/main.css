@@ -161,7 +161,7 @@ img {
     align-items: center;
 }
 
-.navigation a, .header, .work__link {
+.navigation a, .header, .work__link, .menu-btn {
     color: #fff;
 }
 
@@ -188,6 +188,14 @@ h1, h3, .logo, .email, .offer__text, .else__title {
 .logo {
     font-size: 17px;
     font-weight: 100;
+}
+
+.menu-btn {
+    display: none;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
 }
 
 .menu__item, .logo span {
@@ -248,7 +256,7 @@ h1, h3, .logo, .email, .offer__text, .else__title {
 .arrow-down {
     width: 40px;
     height: 40px;
-    line-height: 37px;
+    line-height: 40px;
     display: block;
     margin: 0 auto;
     font-size: 17px;
@@ -257,6 +265,16 @@ h1, h3, .logo, .email, .offer__text, .else__title {
     border-radius: 50%;
     text-align: center;
     letter-spacing: -1px;
+    position: relative;
+}
+
+.arrow-down::before {
+    font-family: 'Stroke-Gap-Icons';
+    content: "\e660";
+    transform: rotate(90deg);
+    position: absolute;
+    top: 0;
+    right: 11px;
 }
 
 .arrow-down:hover {
@@ -329,8 +347,13 @@ h1, h3, .logo, .email, .offer__text, .else__title {
     transform: rotate(+45deg);
 }
 
+.order__number:hover {
+    transform: rotate(+90deg);
+}
+
 .order__box:hover {
      box-shadow: 0 0 26px 13px rgba(12,75,19,0.32);
+     transform: rotate(-90deg);
 }
 
 .order__title {
@@ -418,9 +441,9 @@ h1, h3, .logo, .email, .offer__text, .else__title {
 }
 
 .skill__number:hover {
-    box-shadow: 0 0 8px 6px rgba(62,101,52,0.84);
+    box-shadow: 0 0 8px 6px rgba(62,101,52,0.84) inset;
     color: #000;
-    font-size: 15px;
+    font-weight: 600;
 }
 
 .skill__title {
@@ -591,6 +614,23 @@ h1, h3, .logo, .email, .offer__text, .else__title {
 
     .menu__list{
         display: none;
+        position: absolute;
+        text-align: left;
+        padding: 20px;
+        right: 0;
+        width: 50%;
+        top:105px;
+        z-index: 5;
+        background-color: #2a2c1e;
+    }
+
+    .menu__item {
+        margin: 10px 0;
+    }
+
+    .menu-btn {
+        display: block;
+        background-color: transparent;
     }
 
     .container {
