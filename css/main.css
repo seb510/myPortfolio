@@ -219,13 +219,25 @@ h3,
     border-bottom: 1px solid #fff;
 }
 
+body.hidden {
+    overflow: hidden;
+}
+
 
 /* ------ Header ------ */
 
 .header {
-    background: #2a2c1e url("../img/first.jpg") no-repeat center / cover;
-    padding: 53px 0 83px;
+    padding: 53px 0 20px;
     text-align: center;
+    transition: all .3s linear;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.header.scroll {
+    padding: 15px 0;
+    background-color: #2a2c1e;
 }
 
 .logo {
@@ -235,9 +247,8 @@ h3,
 
 .menu-btn {
     display: none;
-    width: 65px;
-    height: 65px;
-    line-height: 65px;
+    width: 30px;
+    height: 30px;
     text-align: center;
 }
 
@@ -286,17 +297,22 @@ h3,
 }
 
 .offer {
-    margin: 288px 0 249px;
+    padding: 0 0 40px;
+    background: #2a2c1e url("../img/first.jpg") no-repeat center / cover;
+    color: #fff;
+}
+
+.offer__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .offer__text {
-    margin-top: 11px;
+    margin-bottom: 120px;
     font-size: 29px;
     font-weight: 100;
-}
-
-.offer__btn {
-    margin-top: 30px;
 }
 
 
@@ -491,7 +507,7 @@ h3,
     margin-top: 38px;
     text-align: center;
     font-weight: 100;
-    line-height: 1.4em;
+    line-height: 1.4;
 }
 
 .connect {
@@ -510,7 +526,7 @@ h3,
     color: #204d15;
     border-bottom: 1px solid #becbbb;
     font-size: 14px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.1;
 }
 
 .connect__man {
@@ -666,11 +682,6 @@ h3,
 /* ------ Media Queries ------ */
 
 
-/* 992-1200px */
-
-@media screen and (max-width: 1200px) {}
-
-
 /* 768-992px */
 
 @media screen and (max-width: 992px) {
@@ -692,9 +703,6 @@ h3,
     }
     .email {
         font-size: 13px;
-    }
-    .offer {
-        margin: 110px 0;
     }
     .about-back,
     .about-inform {
@@ -738,23 +746,30 @@ h3,
     h3 {
         font-size: 20px;
     }
+    .header {
+        padding: 15px 0 20px;
+    }
     .menu__list {
         display: none;
         position: absolute;
         text-align: left;
         padding: 20px;
-        right: 0;
-        width: 50%;
-        top: 105px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        top: 59px;
         z-index: 5;
         background-color: #2a2c1e;
+        overflow: hidden;
     }
     .menu__item {
         margin: 10px 0;
     }
     .menu-btn {
-        display: block;
+        display: flex;
+        justify-content: center;
         background-color: transparent;
+        cursor: pointer;
     }
     .container {
         width: 520px;
@@ -811,9 +826,6 @@ h3,
     .work__content {
         flex-direction: column;
         align-items: center
-    }
-    .offer {
-        margin-top: 120px;
     }
     .order__min {
         margin-top: 15px;
